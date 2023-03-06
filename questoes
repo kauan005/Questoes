@@ -1,0 +1,92 @@
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        // 1:
+        int indice = 13;
+        int soma = 0;
+        int k = 0;
+        while (k < indice) {
+            k++;
+            soma = soma + k;
+            System.out.println(soma);
+        }
+
+        // 2:
+        System.out.print("Digite um numero: ");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        int a = 0, b = 1, c = 1;
+        while (c < n) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+
+        if (c == n) {
+            System.out.println(n + " pertence à sequência de Fibonacci.");
+        } else {
+            System.out.println(n + " não pertence à sequência de Fibonacci.");
+
+        }
+
+        /*
+         * 3:
+         * a = 9
+         * b = 128
+         * c = 49
+         * d = 100
+         * e = 13
+         * f = 200
+         */
+
+        // 4
+        /*
+         * O carro e o caminhão estão à mesma distância de Ribeirão Preto ao eles se
+         * cruzarem, eles se encontram a 60,9 km de Ribeirão Preto.
+         * 
+         * Para determinar o local em que o carro e o caminhão se cruzam podemos colocar
+         * o ponto de referência em Ribeirão Preto, então, a equação horária do carro é:
+         * x1 = v1*t
+         * 
+         * Como o caminhão sai de um local 100 km distante do ponto de referência e se
+         * aproxima dele, sua equação horária é: x2 = 100 - v2*t
+         * 
+         * Como o caminhão tem 2 pedágios como obstáculo e perde 5 minutos em cada um
+         * deles, podemos calcular o tempo de viagem sem os obstáculos: tS0 = 100/80km/h
+         * = 1,25h
+         * 
+         * Porém, como perde 10 minutos (ou 0,17 horas) nos pedágios, o tempo de viagem
+         * para o caminhão será de 1,25h+0,17h=1,42h. Sua velocidade média é: v2 =
+         * 100/1,42h = 70,6km/h
+         * 
+         * Nas equações horárias podemos limpar o tempo e igualar ambas para achar o
+         * ponto em que o carro e o caminhão se cruzam:
+         * 
+         * t= x1/v1
+         * t= x2-100/-v2
+         * x1 = x2 = > x/v1 = x-100/-v2
+         * -v2*x = v1*x-v1*100
+         * x = v1*100/v1+v2 = 110*100/110+70,6
+         * x = 60,9km
+         * 
+         * Essa é a distância da cidade de Ribeirão Preto em que o carro e o caminhão se
+         * cruzam, ambos estão à mesma distância.
+         */
+
+        // 5:
+        System.out.print("Digite a string: ");
+        String originalString = sc.nextLine();
+        String reversedString = "";
+
+        for (int i = originalString.length() - 1; i >= 0; i--) {
+            reversedString += originalString.charAt(i);
+        }
+
+        System.out.println("String Reversa: " + reversedString);
+        sc.close();
+    }
+
+}
